@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MSLR_project/static/css/main.79299ebf.css",
+    "main.js": "/MSLR_project/static/js/main.bbf564fb.js",
+    "index.html": "/MSLR_project/index.html",
+    "main.79299ebf.css.map": "/MSLR_project/static/css/main.79299ebf.css.map",
+    "main.bbf564fb.js.map": "/MSLR_project/static/js/main.bbf564fb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79299ebf.css",
+    "static/js/main.bbf564fb.js"
+  ]
+}
