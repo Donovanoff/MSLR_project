@@ -48,6 +48,8 @@ A public REST API is available for developers and journalists to retrieve refere
 
 ## 🚀 How to Interact with the App
 
+> **⚠️ Important Note on Performance:** The backend API is hosted on a free Render instance. If it has been inactive for 15 minutes, it will spin down. **Your very first login or registration attempt may take 10-50 seconds** while the server wakes up. Please be patient! Once awake, the application will be lightning fast.
+
 You can interact with the live application using the following test credentials:
 
 ### 👑 Admin Access (Election Commission)

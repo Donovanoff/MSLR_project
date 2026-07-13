@@ -21,6 +21,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
   const [serverMessage, setServerMessage] = useState<string>("");
   const [isError, setIsError] = useState<boolean>(false);
   const [isScanning, setIsScanning] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
@@ -45,6 +46,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
     e.preventDefault();
     setServerMessage("");
     setIsError(false);
+    setIsLoading(true);
 
     const endpoint = isLoginMode ? "/api/login" : "/api/register";
     const url = `${API_BASE_URL}${endpoint}`;
@@ -85,6 +87,8 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
       console.error("Error:", error);
       setServerMessage(`Failed to connect to the server :(`);
       setIsError(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -183,8 +187,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
           </div>
         )}
 
-        <button type="submit" style={{ marginTop: "20px" }}>
-          {isLoginMode ? "Login" : "Register"}
+        <button type="submit" style={{ marginTop: "20px" }} disabled={isLoading}>
+          {isLoading 
+            ? "Connecting to server... (may take up to 50s)" 
+            : isLoginMode ? "Login" : "Register"}
         </button>
       </form>
 
